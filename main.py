@@ -22,4 +22,11 @@ for i in pinlist:
 
 # create i2c bus
 i2c_bus = busio.I2C(board.SCL, board.SDA)
+i2c = busio.I2C(3,2)
 
+# soil moisture sensor 
+soilMoisture = ss.Seesaw(i2c_bus, addr=0x36)
+# light sensor
+lightSensor = adafruit_tsl2591.TSL2591(i2c)
+# temperature and humidity sensor
+tempHumidSensor = adafruit_sht4x.SHT4x(i2c, address=0x44)
