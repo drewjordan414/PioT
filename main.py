@@ -55,3 +55,35 @@ def getTempHumid():
         "Temperature: " : temp * 1.8 + 32, # will convert to fahrenheit
         "Humidity: " : relative_humidity
     }
+
+# get video 
+def getVideo():
+    videoCapture = cv.VideoCapture(0)
+    videoCapture.set(cv.CAP_PROP_FRAME_WIDTH, 640)
+    videoCapture.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
+    videoCapture.set(cv.CAP_PROP_FPS, 30)
+    videoCapture.set(cv.CAP_PROP_BRIGHTNESS, 0.5)
+    videoCapture.set(cv.CAP_PROP_CONTRAST, 0.5)
+    videoCapture.set(cv.CAP_PROP_SATURATION, 0.5)
+    videoCapture.set(cv.CAP_PROP_HUE, 0.5)
+    videoCapture.set(cv.CAP_PROP_EXPOSURE, 0.5)
+    videoCapture.set(cv.CAP_PROP_GAIN, 0.5)
+    videoCapture.set(cv.CAP_PROP_AUTO_EXPOSURE, 0.5)
+    videoCapture.set(cv.CAP_PROP_AUTOFOCUS, 0.5)
+    videoCapture.set(cv.CAP_PROP_AUTO_WB, 0.5)
+    videoCapture.set(cv.CAP_PROP_SHARPNESS, 0.5)
+    videoCapture.set(cv.CAP_PROP_BACKLIGHT, 0.5)
+    videoCapture.set(cv.CAP_PROP_ZOOM, 0.5)
+    videoCapture.set(cv.CAP_PROP_FOCUS, 0.5)
+    videoCapture.set(cv.CAP_PROP_WB_TEMPERATURE, 0.5)
+    videoCapture.set(cv.CAP_PROP_GAMMA, 0.5)
+    videoCapture.set(cv.CAP_PROP_TEMPERATURE, 0.5)
+    videoCapture.set(cv.CAP_PROP_TRIGGER, 0.5)
+    videoCapture.set(cv.CAP_PROP_TRIGGER_DELAY, 0.5)
+    videoCapture.set(cv.CAP_PROP_WHITE_BALANCE_BLUE_U, 0.5)
+    videoCapture.set(cv.CAP_PROP_WHITE_BALANCE_RED_V, 0.5)
+    videoCapture.set(cv.CAP_PROP_OPENNI_OUTPUT_MODE, 0.5)
+    videoCapture.set(cv.CAP_PROP_OPENNI_FRAME_MAX_DEPTH, 0.5)
+    videoCapture.set(cv.CAP_PROP_OPENNI_BASELINE, 0.5)
+    videoCapture.set(cv.CAP_PROP_OPENNI_FOCAL_LENGTH, 0.5)
+    return videoCapture
