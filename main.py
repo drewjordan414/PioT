@@ -26,7 +26,34 @@ i2c = busio.I2C(3,2)
 
 # soil moisture sensor 
 soilMoisture = ss.Seesaw(i2c_bus, addr=0x36)
+print("Sensors initialized")
 # light sensor
 lightSensor = adafruit_tsl2591.TSL2591(i2c)
+print("Sensors initialized")
 # temperature and humidity sensor
-tempHumidSensor = adafruit_sht4x.SHT4x(i2c, address=0x44)
+sht = adafruit_sht4x.SHT4x(i2c, address=0x44)
+print("Sensors initialized")
+
+# get the soil moisture
+def getSoilMoisture():
+    soilMoistureData = soilMoisture.moisture_read()
+    return{
+        "Soil Moisture: " : soilMoistureData
+    }
+
+# get the light
+def getLight():
+    lightData = lightSensor.lux
+    return{
+        "Light: " : lightData
+    }
+
+# get the temperature and humidity
+def getTempHumid():
+    tempC = sht.temperature
+    tempF = tempC * 9 / 5 + 32
+    humidity = sht,relative_humidity
+    return {
+        "Temperature: " : tempF,
+        "Humidity: " : humidity
+    }
