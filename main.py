@@ -1,7 +1,7 @@
 # import libraries
 import adafruit_seesaw as ss
 import os 
-import RPI.GPIO as GPIO
+import RPi.GPIO as GPIO
 import board
 import busio
 import adafruit_sht4x
@@ -50,10 +50,8 @@ def getLight():
 
 # get the temperature and humidity
 def getTempHumid():
-    tempC = sht.temperature
-    tempF = tempC * 9 / 5 + 32
-    humidity = sht,relative_humidity
-    return {
-        "Temperature: " : tempF,
-        "Humidity: " : humidity
+    temp, relative_humidity = sht.measurements
+    return{
+        "Temperature: " : temp * 1.8 + 32, # will convert to fahrenheit
+        "Humidity: " : relative_humidity
     }
