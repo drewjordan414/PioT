@@ -8,7 +8,6 @@ import adafruit_sht4x
 import adafruit_tsl2591
 import cv2 as cv
 import smbus2
-import json 
 
 # gpio warnings off
 GPIO.setwarnings(False)
